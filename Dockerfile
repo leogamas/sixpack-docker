@@ -2,7 +2,7 @@ FROM python:2.7.7
 
 MAINTAINER Leonardo Gamas <leogamas@gmail.com>
 
-RUN pip install sixpack==2.0.2
+RUN pip install sixpack==2.0.4
 RUN pip install gunicorn==19.3.0
 RUN pip install gevent==1.0.1
 
