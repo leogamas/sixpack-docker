@@ -1,0 +1,16 @@
+image: library/redis:3
+imagePullPolicy: IfNotPresent
+
+## Redis password
+# redisPassword:
+persistence:
+  enabled: true
+
+  # storageClass: 
+  accessMode: ReadWriteOnce
+  size: 8Gi
+
+resources:
+  requests:
+    memory: 256Mi
+    cpu: 100m
