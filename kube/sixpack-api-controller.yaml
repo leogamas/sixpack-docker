@@ -1,0 +1,32 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: sixpack-api
+spec:
+  template:
+    metadata:
+      labels:
+        name: sixpack-api
+    spec:
+      containers:
+      - name: sixpack-api
+        image: leogamas/sixpack
+        resources:
+          requests:
+            memory: "128M"
+            cpu: "0.2"
+          limits:
+            memory: "256M"
+            cpu: "0.5"
+        ports:
+        - containerPort: 5000:8000
+        env:
+        - name: SIXPACK_CONFIG_ENABLED
+          value: true
+        - name: SIXPACK_CONFIG_REDIS_PORT
+          value: 6379
+        - name: SIXPACK_CONFIG_REDIS_HOST
+          value: redis
+        - name: SIXPACK_CONFIG_REDIS_PREFIX
+          value: sixpack
+EOF
