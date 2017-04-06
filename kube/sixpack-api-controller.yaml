@@ -11,6 +11,7 @@ spec:
       containers:
       - name: sixpack-api
         image: leogamas/sixpack
+        command: ["sixpack.server:start"]
         resources:
           requests:
             memory: "128M"
